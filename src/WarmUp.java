@@ -86,6 +86,11 @@ public class WarmUp {
             return str;
         return "Not " + str;
     }
+    public static String frontBack(String str) {
+        if (str.length() < 2)
+            return str;
+        return str.charAt(str.length()-1) + str.substring(1,str.length()-1) + str.charAt(0);
+    }
 
 
 }
