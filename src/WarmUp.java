@@ -79,18 +79,113 @@ public class WarmUp {
     public static boolean posNeg(int a, int b, boolean negative) {
         if (negative)
             return a < 0 && b < 0;
-        return ((a < 0 && b >= 0) || (a >= 0 &&  b < 0));
+        return ((a < 0 && b >= 0) || (a >= 0 && b < 0));
     }
+
     public static String notString(String str) {
-        if (str.length() >= 3 && str.substring(0,3).equalsIgnoreCase("not"))
+        if (str.length() >= 3 && str.substring(0, 3).equalsIgnoreCase("not"))
             return str;
         return "Not " + str;
     }
+
     public static String frontBack(String str) {
         if (str.length() < 2)
             return str;
-        return str.charAt(str.length()-1) + str.substring(1,str.length()-1) + str.charAt(0);
+        return str.charAt(str.length() - 1) + str.substring(1, str.length() - 1) + str.charAt(0);
     }
 
+    public static String front3(String str) {
+        if (str.length() < 3)
+            return str + str + str;
+        return str.substring(0, 3) + str.substring(0, 3) + str.substring(0, 3);
+    }
+
+    public static boolean or35(int n) {
+        return ((n % 3) == 0) || ((n % 5) == 0);
+    }
+
+    public static String front22(String str) {
+        if (str.length() < 3)
+            return str + str + str;
+        return str.substring(0, 2) + str + str.substring(0, 2);
+    }
+
+    public static boolean icyHot(int temp1, int temp2) {
+        return (temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0);
+    }
+
+    public static boolean in1020(int a, int b) {
+        return (a >= 10 && a <= 20) || (b >= 10 && b <= 20);
+    }
+
+    public static boolean loneTeen(int a, int b) {
+        return (a >= 13 && a <= 19 && !(b >= 13 && b <= 19)) || (b >= 13 && b <= 19 && !(a >= 13 && a <= 19));
+    }
+
+    public static String delDel(String str) {
+        if (str.length() < 4)
+            return str;
+        if (str.substring(1, 4).equalsIgnoreCase("del"))
+            return str.charAt(0) + str.substring(4);
+        return str;
+    }
+
+    public static String startOzMal(String str) {
+        if (str.length() != 0) {
+            final boolean b = str.charAt(0) == 'o' || str.charAt(0) == 'O';
+            if (str.length() == 1 && b) {
+                return String.valueOf(str.charAt(0));
+            } else {
+                final boolean b1 = str.charAt(1) == 'z' || str.charAt(1) == 'Z';
+                if (b1 && b)
+                    return String.valueOf(str.charAt(0)) + str.charAt(1);
+                else if (b1)
+                    return String.valueOf(str.charAt(1));
+                else if (b)
+                    return String.valueOf(str.charAt(0));
+            }
+        }
+        return "";
+    }
+
+    public String startOz(String str) {
+        String result = "";
+        if (str.length() >= 1 && str.charAt(0) == 'o') {
+            result = result + str.charAt(0);
+        }
+        if (str.length() >= 2 && str.charAt(1) == 'z') {
+            result = result + str.charAt(1);
+        }
+        return result;
+    }
+
+    public static int intMax(int a, int b, int c) {
+        int max = a;
+        if (b > max)
+            max = b;
+        if (c > max)
+            max = c;
+        return max;
+    }
+
+    public static boolean stringE(String str) {
+        int totalE = 0;
+        char[] letras = str.toCharArray();
+        for (char c : letras) {
+            if (c == 'e' || c == 'E')
+                totalE++;
+        }
+        return (totalE >= 1 && totalE <= 3);
+    }
+
+    public static boolean lastDigit(int a, int b) {
+        if (a < 10 && b < 10)
+            return a == b;
+        if (a < 10 && b > 10)
+            return a == b % 10;
+        if (a > 10 && b < 10)
+            return a % 10 == b;
+        return a % 10 == b % 10;
+    }
 
 }
