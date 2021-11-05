@@ -148,17 +148,6 @@ public class WarmUp {
         return "";
     }
 
-    public String startOz(String str) {
-        String result = "";
-        if (str.length() >= 1 && str.charAt(0) == 'o') {
-            result = result + str.charAt(0);
-        }
-        if (str.length() >= 2 && str.charAt(1) == 'z') {
-            result = result + str.charAt(1);
-        }
-        return result;
-    }
-
     public static int intMax(int a, int b, int c) {
         int max = a;
         if (b > max)
@@ -187,5 +176,29 @@ public class WarmUp {
             return a % 10 == b;
         return a % 10 == b % 10;
     }
+
+    public static String endUp(String str) {
+        if (str.length() < 3)
+            return str.toUpperCase();
+        return str.substring(0, str.length() - 3)
+                + str.substring(str.length() - 3).toUpperCase();
+    }
+
+    public String startOz(String str) {
+        String result = "";
+        if (str.length() >= 1 && str.charAt(0) == 'o') {
+            result = result + str.charAt(0);
+        }
+        if (str.length() >= 2 && str.charAt(1) == 'z') {
+            result = result + str.charAt(1);
+        }
+        return result;
+    }
+
+    public static String everyNth(String str, int n) {
+        return "";
+    }
+
+
 
 }
